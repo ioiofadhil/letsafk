@@ -47,13 +47,7 @@ const PLACEHOLDER_ITEMS = [
   },
 ];
 
-function PlaceholderCard({
-  item,
-  index,
-}: {
-  item: (typeof PLACEHOLDER_ITEMS)[0];
-  index: number;
-}) {
+function PlaceholderCard({ item }: { item: (typeof PLACEHOLDER_ITEMS)[0] }) {
   return (
     <motion.a
       href={INSTAGRAM_PROFILE_URL}
