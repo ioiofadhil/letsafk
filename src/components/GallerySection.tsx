@@ -136,12 +136,8 @@ export function GallerySection() {
                   index={index}
                 />
               ))
-            : PLACEHOLDER_ITEMS.map((item, index) => (
-                <PlaceholderCard
-                  key={item.id}
-                  item={item}
-                  index={index}
-                />
+            : PLACEHOLDER_ITEMS.map((item) => (
+                <PlaceholderCard key={item.id} item={item} />
               ))}
         </div>
       </div>
