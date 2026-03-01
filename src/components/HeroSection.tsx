@@ -4,7 +4,7 @@ import { Button, Heading } from "./ui";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-36 pb-12 px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center md:pt-36 pt-40 pb-12 px-4 overflow-hidden">
       <div className="absolute top-1/4 left-10 w-32 h-32 bg-[#FF6B9D] rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse" />
       <div
         className="absolute bottom-1/4 right-10 w-40 h-40 bg-[#FFD93D] rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"
@@ -42,7 +42,7 @@ export function HeroSection() {
             The ultimate weekend social club in Indonesia. Unplug, step outside,
             and experience the city with awesome people.
           </p>
-          <div className="flex flex-wrap gap-4 pt-4">
+          <div className="flex md:flex-row flex-col gap-4 pt-4">
             <Button
               as="a"
               href="#events"
