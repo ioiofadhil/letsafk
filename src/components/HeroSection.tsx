@@ -42,7 +42,7 @@ export function HeroSection() {
             The ultimate weekend social club in Indonesia. Unplug, step outside,
             and experience the city with awesome people.
           </p>
-          <div className="flex md:flex-row flex-col gap-4 pt-4">
+          <div className="flex md:flex-row flex-col w-full md:w-auto gap-4 pt-4 mb:pb-0 pb-6">
             <Button
               as="a"
               href="#events"
