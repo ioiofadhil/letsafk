@@ -1,14 +1,50 @@
-import { motion } from 'framer-motion';
-import { INSTAGRAM_PROFILE_URL, INSTAGRAM_POSTS } from '../config/instagram';
-import { Button, Heading, InstagramCard } from './ui';
+import { motion } from "framer-motion";
+import { INSTAGRAM_PROFILE_URL, INSTAGRAM_POSTS } from "../config/instagram";
+import { Button, Heading, InstagramCard } from "./ui";
 
 const PLACEHOLDER_ITEMS = [
-  { id: 1, color: 'bg-[#FF6B9D]', pattern: 'pattern-dots', height: 'h-64', rotation: '-rotate-2' },
-  { id: 2, color: 'bg-[#FFD93D]', pattern: 'pattern-zigzag', height: 'h-48', rotation: 'rotate-3' },
-  { id: 3, color: 'bg-white', pattern: 'pattern-waves', height: 'h-80', rotation: '-rotate-1' },
-  { id: 4, color: 'bg-[#EA580C]', pattern: 'pattern-grid', height: 'h-56', rotation: 'rotate-2' },
-  { id: 5, color: 'bg-[#FFD93D]', pattern: 'pattern-dots', height: 'h-72', rotation: '-rotate-3' },
-  { id: 6, color: 'bg-[#FF6B9D]', pattern: 'pattern-zigzag', height: 'h-64', rotation: 'rotate-1' },
+  {
+    id: 1,
+    color: "bg-[#FF6B9D]",
+    pattern: "pattern-dots",
+    height: "h-64",
+    rotation: "-rotate-2",
+  },
+  {
+    id: 2,
+    color: "bg-[#FFD93D]",
+    pattern: "pattern-zigzag",
+    height: "h-48",
+    rotation: "rotate-3",
+  },
+  {
+    id: 3,
+    color: "bg-white",
+    pattern: "pattern-waves",
+    height: "h-80",
+    rotation: "-rotate-1",
+  },
+  {
+    id: 4,
+    color: "bg-[#EA580C]",
+    pattern: "pattern-grid",
+    height: "h-56",
+    rotation: "rotate-2",
+  },
+  {
+    id: 5,
+    color: "bg-[#FFD93D]",
+    pattern: "pattern-dots",
+    height: "h-72",
+    rotation: "-rotate-3",
+  },
+  {
+    id: 6,
+    color: "bg-[#FF6B9D]",
+    pattern: "pattern-zigzag",
+    height: "h-64",
+    rotation: "rotate-1",
+  },
 ];
 
 function PlaceholderCard({
@@ -26,23 +62,23 @@ function PlaceholderCard({
       key={item.id}
       initial={{ opacity: 0, scale: 0.8, y: 50 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.03, zIndex: 10 }}
       className={`relative ${item.height} ${item.color} rounded-2xl border-4 border-black sticker-shadow transform ${item.rotation} overflow-hidden group cursor-pointer block`}
       style={{
         backgroundImage:
-          item.pattern === 'pattern-dots'
-            ? 'radial-gradient(black 2px, transparent 2px)'
-            : item.pattern === 'pattern-grid'
-              ? 'linear-gradient(black 2px, transparent 2px), linear-gradient(90deg, black 2px, transparent 2px)'
-              : 'repeating-linear-gradient(45deg, black, black 10px, transparent 10px, transparent 20px)',
+          item.pattern === "pattern-dots"
+            ? "radial-gradient(black 2px, transparent 2px)"
+            : item.pattern === "pattern-grid"
+              ? "linear-gradient(black 2px, transparent 2px), linear-gradient(90deg, black 2px, transparent 2px)"
+              : "repeating-linear-gradient(45deg, black, black 10px, transparent 10px, transparent 20px)",
         backgroundSize:
-          item.pattern === 'pattern-dots'
-            ? '20px 20px'
-            : item.pattern === 'pattern-grid'
-              ? '40px 40px'
-              : 'auto',
+          item.pattern === "pattern-dots"
+            ? "20px 20px"
+            : item.pattern === "pattern-grid"
+              ? "40px 40px"
+              : "auto",
       }}
     >
       <div className="absolute inset-3 border-2 border-black/20 rounded-xl" />
@@ -60,7 +96,10 @@ export function GallerySection() {
   const hasPosts = INSTAGRAM_POSTS.length > 0;
 
   return (
-    <section id="gallery" className="py-24 px-4">
+    <section
+      id="gallery"
+      className="py-24 px-4"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
           <div>
@@ -69,7 +108,10 @@ export function GallerySection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <Heading as="h2" accent="yellow">
+              <Heading
+                as="h2"
+                accent="yellow"
+              >
                 Highlights
               </Heading>
             </motion.div>
@@ -101,7 +143,11 @@ export function GallerySection() {
                 />
               ))
             : PLACEHOLDER_ITEMS.map((item, index) => (
-                <PlaceholderCard key={item.id} item={item} index={index} />
+                <PlaceholderCard
+                  key={item.id}
+                  item={item}
+                  index={index}
+                />
               ))}
         </div>
       </div>

@@ -1,6 +1,13 @@
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
-const ROTATIONS = ['-rotate-2', 'rotate-3', '-rotate-1', 'rotate-2', '-rotate-3', 'rotate-1'] as const;
+const ROTATIONS = [
+  "-rotate-2",
+  "rotate-3",
+  "-rotate-1",
+  "rotate-2",
+  "-rotate-3",
+  "rotate-1",
+] as const;
 
 export type InstagramCardProps = {
   postUrl: string;
@@ -8,7 +15,11 @@ export type InstagramCardProps = {
   index?: number;
 };
 
-export function InstagramCard({ postUrl, imageUrl, index = 0 }: InstagramCardProps) {
+export function InstagramCard({
+  postUrl,
+  imageUrl,
+  index = 0,
+}: InstagramCardProps) {
   const rotation = ROTATIONS[index % ROTATIONS.length];
 
   return (
@@ -18,8 +29,8 @@ export function InstagramCard({ postUrl, imageUrl, index = 0 }: InstagramCardPro
       rel="noopener noreferrer"
       initial={{ opacity: 0, scale: 0.8, y: 50 }}
       whileInView={{ opacity: 1, scale: 1, y: 0 }}
-      viewport={{ once: true, margin: '-50px' }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5 }}
       whileHover={{ scale: 1.03, zIndex: 10 }}
       className={`relative aspect-[3/4] rounded-2xl border-4 border-black sticker-shadow transform ${rotation} overflow-hidden group cursor-pointer block`}
     >
